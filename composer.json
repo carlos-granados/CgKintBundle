@@ -1,0 +1,35 @@
+{
+    "name":        "Cg/KintBundle",
+    "type":        "symfony-bundle",
+    "description": "This bundle lets you use the Kint function in your Twig templates. Kint is a print_r() replacement which produces a structured, collapsible and escaped output",
+    "keywords":    ["kint", "debug", "symfony", "bundle", "twig"],
+    "homepage":    "http://github.com/barelon/CgKintBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Carlos Granados",
+            "homepage": "http://github.com/barelon"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "http://github.com/barelon/CgKintBundle"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0.0",
+        "raveren/kint":             "dev-master"
+    },
+
+    "minimum-stability": "dev",
+
+    "autoload": {
+        "psr-0": {
+            "Cg\\KintBundle": ""
+        }
+    },
+
+    "target-dir": "Cg/KintBundle"
+}
