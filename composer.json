@@ -1,5 +1,5 @@
 {
-    "name":        "Cg/KintBundle",
+    "name":        "cg/kint-bundle",
     "type":        "symfony-bundle",
     "description": "This bundle lets you use the Kint function in your Twig templates. Kint is a print_r() replacement which produces a structured, collapsible and escaped output",
     "keywords":    ["kint", "debug", "symfony", "bundle", "twig"],

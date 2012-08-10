@@ -26,7 +26,7 @@ Add the Kint Bundle in your composer.json file:
 ```js
 {
     "require": {
-        "Cg/KintBundle": "*"
+        "cg/kint-bundle": "*"
     }
 }
 ```
@@ -95,22 +95,22 @@ Within any Twig template use
 {{kint(var1,var2,...)}}
 ```
 
-This will dump on screen the value of these Twig variables. They will be shown in a pretty format, with a collapsable hierarchical view. Click on any variable name to open or collapse one level or click the `+`  and `-` signs to open or collapse all levels.
+This will dump on screen the values of these Twig variables. They will be shown in a beautiful format, with a collapsable hierarchical view. Click on any variable name to open or collapse one level or click the `+`  and `-` signs to open or collapse all levels.
 
-If you don´t include any variable, like this:
+If you don´t include any variable names in your kint() call, like this:
 
 ```
 {{kint()}}
 ```
 
-then the whole Twig Context with all its variables will be shown.
+then the whole Twig Context with all its variables will be dumped.
 
-Kint will only show this output id debug is true (usally this is the case for the dev environment, while it is false in the prod environment)
+Kint will only show this output if debug is true (usally this is the case for the dev environment, while it is false in the prod environment)
 
 Configuration
 =============
 
-In your `app/config/config.yml` file include
+In your `app/config/config.yml` file you can include
 
 ```yml
 cg_kint:
@@ -123,7 +123,7 @@ cg_kint:
 - The `nesting_depth` parameter defines the maximum depth of nesting in object/array variables that Kint will show. Use 0 for infinite depth. Kint will recognize recursion in variables and will not hang your browser.
 - The `string_length` parameter defines the maximum lenth of strings shown. If a string is longer than that it will be shown truncated with a link to see it fully.
 
-All these parameters are optional. If you don´t include them they will take the value shown above.
+All these parameters are optional. If you don´t include them they will take the default values shown above.
 
 License
 =======
