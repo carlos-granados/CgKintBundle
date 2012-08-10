@@ -42,30 +42,46 @@ Composer will install the bundle and Kint in your project's `vendor` directory.
 ## Using Deps (for Symfony 2.0)
 
 
-Add this to your `Deps` file: 
+1- Add this to your `Deps` file: 
 
 ``` ini
 [Kint]
     git=http://github.com/raveren/kint.git
-    target=Kint
+    target=raveren/kint
+
 [KintBundle]
     git=http://github.com/barelon/CgKintBundle.git
     target=bundles/Cg/KintBundle
 ```
 
-then run `./bin/vendors install`
+2- run `./bin/vendors install`
 
-Add the `Kint` and `Cg` namespaces to your autoloader:
+3- Add the `Cg` namespace to your autoloader:
 
 ``` php
-<?php
 // app/autoload.php
 
 $loader->registerNamespaces(array(
     // ...
-    'Kint' => __DIR__.'/../vendor/Kint',
     'Cg' => __DIR__.'/../vendor/bundles',
 ));
+```
+
+4- Add a classmap to your autoloader so that it can load the Kint class. Add this line at the beginning of the app/autoload.php file
+
+``` php
+use Symfony\Component\ClassLoader\MapClassLoader;
+```
+
+And add this code snippet at the end of that file:
+
+``` php
+// Create map autoloader
+$mapLoader = new MapClassLoader(array(
+    'Kint' => __DIR__.'/../vendor/raveren/kint/Kint.class.php',
+));
+
+$mapLoader->register();
 ```
 
 
@@ -74,7 +90,6 @@ $loader->registerNamespaces(array(
 Finally, enable the bundle in the kernel:
 
 ``` php
-<?php
 // app/AppKernel.php
 
 public function registerBundles()
