@@ -9,11 +9,12 @@
     </parameters>
 
     <services>
-        <service id="twig.extension.kint" class="%twig.extension.kint.class%" public="false">
+        <service id="twig.extension.kint" class="%twig.extension.kint.class%">
             <tag name="twig.extension" />
             <argument>%cg_kint.enabled%</argument>
             <argument>%cg_kint.nesting_depth%</argument>
             <argument>%cg_kint.string_length%</argument>
-        </service>
+            <argument type="service" id="kernel" />
+         </service>
     </services>
 </container>

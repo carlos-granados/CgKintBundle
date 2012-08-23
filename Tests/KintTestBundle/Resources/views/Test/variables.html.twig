@@ -1,0 +1,9 @@
+{% extends 'KintTestBundle::base.html.twig' %}
+
+{% block content %}
+    {%set var2 = 'test'%}
+    {{kint(var)}}
+    {{kint(var2)}}
+    {{kint("hello")}}
+    {{kint(app.user)}}
+{% endblock %}

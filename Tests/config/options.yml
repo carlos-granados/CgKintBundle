@@ -1,0 +1,6 @@
+imports:
+    - { resource: default.yml }
+
+cg_kint:
+    nesting_depth:    1
+    string_length:    2

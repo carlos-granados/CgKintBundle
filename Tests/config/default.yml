@@ -1,0 +1,11 @@
+framework:
+    secret: kinttest
+    test: ~
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+    templating:
+        engines: [twig]
+
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%

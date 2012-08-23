@@ -20,14 +20,16 @@ class KintExtension extends Twig_Extension
     private $enabled;
     private $nesting_depth;
     private $string_length;
+    private $kernel;
   
-    public function __construct($enabled,$nesting_depth,$string_length)
+    public function __construct($enabled,$nesting_depth,$string_length,$kernel)
     {
         $this->enabled = $enabled;
         $this->nesting_depth = $nesting_depth;
         $this->string_length = $string_length;
+        $this->kernel = $kernel;
     }
-
+    
     /**
      * Returns a list of global functions to add to the existing list.
      *
@@ -59,8 +61,10 @@ class KintExtension extends Twig_Extension
         Kint::$displayCalledFrom = false;
         Kint::$devel = false;
         Kint::$maxLevels = $this->nesting_depth;
-        Kint::$maxStrLength = $this->string_length;
-
+        Kint::$maxStrLength = $this->string_length;        
+        Kint::$appRootDirs = array(
+            $this->kernel->getRootDir() => '&lt;APP ROOT&gt;'
+        );
 
         $output = '';
 

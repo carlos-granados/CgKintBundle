@@ -1,0 +1,8 @@
+test_variables:
+    pattern:   /cg_kint_test_variables
+    defaults:  { _controller: KintTestBundle:Test:showVariables }
+
+test_twig_context:
+    pattern:   /cg_kint_test_twig_context
+    defaults:  { _controller: KintTestBundle:Test:showTwigContext }
+
