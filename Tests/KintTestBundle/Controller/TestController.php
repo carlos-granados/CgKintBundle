@@ -2,7 +2,6 @@
 namespace Cg\KintBundle\Tests\KintTestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
 class TestController extends Controller
 {
@@ -11,10 +10,11 @@ class TestController extends Controller
         $var = array (
             array(
                 array(
-                    'test' => 1                
+                    'test' => 1
                 )
             )
         );
+
         return $this->render('KintTestBundle:Test:variables.html.twig', array('var'=>$var));
     }
 
@@ -22,6 +22,5 @@ class TestController extends Controller
     {
         return $this->render('KintTestBundle:Test:twig_context.html.twig');
     }
-    
+
 }
-?>

@@ -5,4 +5,3 @@ test_variables:
 test_twig_context:
     pattern:   /cg_kint_test_twig_context
     defaults:  { _controller: KintTestBundle:Test:showTwigContext }
-

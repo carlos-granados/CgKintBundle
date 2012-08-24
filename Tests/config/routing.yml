@@ -1,3 +1,2 @@
 KintTestBundle:
     resource: "@KintTestBundle/Resources/config/routing.yml"
-

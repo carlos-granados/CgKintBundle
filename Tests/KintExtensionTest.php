@@ -13,8 +13,7 @@ class KintExtensionTest extends WebTestCase
         '"hello"',
         'app.user',
     );
-    
-   
+
     public function testVariables()
     {
         $client = $this->createClient();
@@ -23,7 +22,7 @@ class KintExtensionTest extends WebTestCase
         $divs = $crawler->filter('.kint');
         for ($i=0;$i<$divs->count();$i++) {
             $kintVar = $divs->eq($i)->filterXPath('//dfn')->text();
-            $this->assertEquals($kintVar ,$this->kintVars[$i]);           
+            $this->assertEquals($kintVar ,$this->kintVars[$i]);
         }
     }
 
@@ -35,7 +34,7 @@ class KintExtensionTest extends WebTestCase
         $divs = $crawler->filter('.kint');
         $this->assertEquals(1,$divs->count());
         $kintVar = $divs->eq(0)->filterXPath('//dfn')->text();
-        $this->assertEquals($kintVar ,'TWIG CONTEXT');           
+        $this->assertEquals($kintVar ,'TWIG CONTEXT');
     }
 
     public function testKintDisabled()

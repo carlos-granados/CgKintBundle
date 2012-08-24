@@ -24,7 +24,7 @@ class CgKintExtension extends Extension
 
         $container->setParameter('cg_kint.enabled', $config['enabled']);
         $container->setParameter('cg_kint.nesting_depth', $config['nesting_depth']);
-        $container->setParameter('cg_kint.string_length', $config['string_length']);                
+        $container->setParameter('cg_kint.string_length', $config['string_length']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
