@@ -10,14 +10,8 @@
         {
             "package": "raveren/kint",
             "version": "dev-master",
-            "source-reference": "3f232200d79429c95494e961c5ed227dea8e2258",
-            "commit-date": "1344430035"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "d9303e702a1f7b771cfc235fb6db06dbdcb5f7c6",
+            "commit-date": "1345477720"
         },
         {
             "package": "symfony/symfony",
@@ -34,8 +28,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "552143062982fd15a1d6fe5a0cdda1f007212154",
-            "commit-date": "1345489844"
+            "source-reference": "11e91f63e94a4fce9e65ddbda44ed00ba22a2171",
+            "commit-date": "1345724338"
         }
     ],
     "packages-dev": null,
