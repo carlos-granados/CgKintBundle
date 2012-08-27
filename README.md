@@ -21,7 +21,7 @@ Installation
 
 ## Using Composer (for Symfony 2.1)
 
-Add the Kint Bundle in your composer.json file:
+Add the Kint Bundle in your `composer.json` file:
 
 ```js
 {
@@ -67,7 +67,7 @@ $loader->registerNamespaces(array(
 ));
 ```
 
-4- Add a classmap to your autoloader so that it can load the Kint class. Add this line at the beginning of the app/autoload.php file
+4- Add a classmap to your autoloader so that it can load the Kint class. Add this line at the beginning of the `app/autoload.php` file
 
 ``` php
 use Symfony\Component\ClassLoader\MapClassLoader;
