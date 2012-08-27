@@ -6,15 +6,15 @@ library in your Twig templates.
 
 This bundle adds a new Twig **kint()** function which is a replacement for the Twig **dump()** function. Extremely easy to use but very powerful. Some of its features:
 
-  * Much more elegant and readable output - structured, collapsible and escaped.
-  * The name of the twig variable is displayed.
-  * Accepts any number of parameters in one call and groups them for you to see what was dumped in different iterations. 
-  * Handles recursive variables.
-  * Much more information is displayed about the variable in many cases:
-      - static properties of the dumped objects class;
-      - specific types of data are recognized and displayed in a custom way (eg. JSON, XML strings);
-      - if a resource variable is of an opened file, the file name is displayed and much more...
-  * Complex variables are dumped with a fixed nested depth so that it doesn't hang up your browser for enormous objects.
+- Much more elegant and readable output - structured, collapsible and escaped.
+- The name of the twig variable is displayed.
+- Accepts any number of parameters in one call and groups them for you to see what was dumped in different iterations. 
+- Handles recursive variables.
+- Much more information is displayed about the variable in many cases:
+    - static properties of the dumped objects class;
+    - specific types of data are recognized and displayed in a custom way (eg. JSON, XML strings);
+    - if a resource variable is of an opened file, the file name is displayed and much more...
+- Complex variables are dumped with a fixed nested depth so that it doesn't hang up your browser for enormous objects.
 
 
 Installation
