@@ -4,20 +4,26 @@
         {
             "package": "doctrine/common",
             "version": "2.3.x-dev",
-            "source-reference": "2ec4bc6db13db6a0976a16b71058083c55cbcdbd",
-            "commit-date": "1343847076"
+            "source-reference": "bcc89eb63e7dad22102c4e0516fe40159461f40a",
+            "commit-date": "1347603718"
         },
         {
             "package": "raveren/kint",
             "version": "dev-master",
-            "source-reference": "d9303e702a1f7b771cfc235fb6db06dbdcb5f7c6",
-            "commit-date": "1345477720"
+            "source-reference": "38773faa558b71d09df937eb048ffd54f70a1ad8",
+            "commit-date": "1347612073"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "2cf3cb5b7a56446c76f90689e4df047031d73205",
-            "commit-date": "1345655061"
+            "alias-pretty-version": "2.2.x-dev",
+            "alias-version": "2.2.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "61d57f7eba74c499b5f1cc52a83846f714e36f2f",
+            "commit-date": "1347516780"
         },
         {
             "package": "twig/twig",
@@ -28,8 +34,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "11e91f63e94a4fce9e65ddbda44ed00ba22a2171",
-            "commit-date": "1345724338"
+            "source-reference": "956a66e6da304ead2aa2632acc01118b360d19d3",
+            "commit-date": "1347542132"
         }
     ],
     "packages-dev": null,
