@@ -5,7 +5,6 @@
     "keywords":    ["kint", "debug", "symfony", "bundle", "twig"],
     "homepage":    "http://github.com/barelon/CgKintBundle",
     "license":     "MIT",
-    "version": "0.0.1-alpha",
 
     "authors": [
         {
