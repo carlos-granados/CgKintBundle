@@ -22,6 +22,10 @@ class CgKintExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        \Kint::$enabled = $config['enabled'];
+        \Kint::$maxLevels = $config['nesting_depth'];
+        \Kint::$maxStrLength = $config['string_length'];
+
         $container->setParameter('cg_kint.enabled', $config['enabled']);
         $container->setParameter('cg_kint.nesting_depth', $config['nesting_depth']);
         $container->setParameter('cg_kint.string_length', $config['string_length']);
