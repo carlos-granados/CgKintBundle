@@ -26,7 +26,7 @@ Add the Kint Bundle in your `composer.json` file:
 ```js
 {
     "require": {
-        "cg/kint-bundle": "*"
+        "cg/kint-bundle": "dev-master"
     }
 }
 ```
