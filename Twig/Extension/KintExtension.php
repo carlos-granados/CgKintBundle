@@ -84,29 +84,12 @@ class KintExtension extends Twig_Extension
 
         } else {
 
-            //we try to get the names of the variables to display
-
-            $trace = debug_backtrace();
-            $callee = $trace[0];
-
-            $lines   = file($callee['file']);
-            $source = $lines[$callee['line']-1];
-
-            preg_match('/twig_kint\((.+)\);/',$source,$matches);
-            $parameters = $matches[1];
-            $parameters = preg_replace('/\$this->getContext\(\$context, "(.+)"\)/U',"$1",$parameters);
-            do {
-                $parameters = preg_replace('/\$this->getAttribute\((.+), "(.+)"\)/U',"$1.$2",$parameters,1,$found);
-            } while ($found);
-
-            $parameters = explode(', ',$parameters);
-
             for ($i = 1; $i < $count; $i++) {
                 $kint_variable = func_get_arg($i);
                 ob_start();
                 Kint::dump($kint_variable);
                 $result = ob_get_clean();
-                $output .= str_replace ('$kint_variable',$parameters[$i],$result);
+                $output .= str_replace ('$kint_variable',$i,$result);
             }
         }
 
