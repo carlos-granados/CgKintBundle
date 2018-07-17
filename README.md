@@ -120,8 +120,6 @@ If you don´t include any variable names in your kint() call, like this:
 
 then the whole Twig Context with all its variables will be dumped.
 
-Kint will only show this output if debug is true (usally this is the case for the dev environment, while it is false in the prod environment)
-
 Configuration
 =============
 
@@ -134,7 +132,7 @@ cg_kint:
     string_length:    60
 ```
 
-- The `enabled` parameter defines if kint output is enabled or not. Set this to false and Kint will not output anything, not even in debug mode.
+- The `enabled` parameter defines if kint output is enabled or not. Set this to false and Kint will not output anything, you probably want to set this to false for the prod environment.
 - The `nesting_depth` parameter defines the maximum depth of nesting in object/array variables that Kint will show. Use 0 for infinite depth. Kint will recognize recursion in variables and will not hang your browser.
 - The `string_length` parameter defines the maximum lenth of strings shown. If a string is longer than that it will be shown truncated with a link to see it fully.
 

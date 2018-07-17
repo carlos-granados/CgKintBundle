@@ -12,7 +12,6 @@
 namespace Cg\KintBundle\Twig\Extension;
 use Twig_Extension;
 use Twig_Function_Method;
-use Twig_Environment;
 use Kint;
 
 class KintExtension extends Twig_Extension
@@ -38,7 +37,7 @@ class KintExtension extends Twig_Extension
     public function getFunctions()
     {
         return array(
-            'kint' => new Twig_Function_Method($this,'twig_kint', array('is_safe' => array('html'), 'needs_context' => true, 'needs_environment' => true)),
+            'kint' => new Twig_Function_Method($this,'twig_kint', array('is_safe' => array('html'), 'needs_context' => true)),
         );
     }
 
@@ -52,9 +51,9 @@ class KintExtension extends Twig_Extension
         return 'kint';
     }
 
-    public function twig_kint(Twig_Environment $env, $context)
+    public function twig_kint($context)
     {
-        if (!$env->isDebug() || !$this->enabled) {
+        if (!$this->enabled) {
             return;
         }
 
