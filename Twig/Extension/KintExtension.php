@@ -68,7 +68,8 @@ class KintExtension extends Twig_Extension
         $output = '';
 
         $count = func_num_args();
-        if (2 === $count) {
+        if (1 === $count) {
+            //no extra parameters passed, so we dump the whole twig context
             $kint_variable = array();
             foreach ($context as $key => $value) {
                 if (!$value instanceof Twig_Template) {
@@ -100,7 +101,7 @@ class KintExtension extends Twig_Extension
 
             $parameters = explode(', ',$parameters);
 
-            for ($i = 2; $i < $count; $i++) {
+            for ($i = 1; $i < $count; $i++) {
                 $kint_variable = func_get_arg($i);
                 ob_start();
                 Kint::dump($kint_variable);
