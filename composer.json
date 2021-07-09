@@ -21,7 +21,7 @@
         "php":                      ">=5.3.2",
         "symfony/framework-bundle": ">=2.0.0",
         "symfony/symfony":          ">=2.0.0",
-        "raveren/kint":             "~0.9"
+        "kint-php/kint":             "v0.9"
     },
 
     "minimum-stability": "dev",

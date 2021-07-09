@@ -2,3 +2,4 @@
 /Tests/Cache
 /Tests/logs
 /php-cs-fixer.phar
+.idea
