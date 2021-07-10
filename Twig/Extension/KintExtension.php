@@ -39,7 +39,7 @@ class KintExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            'kint' => new TwigFunction($this, array($this, 'twig_kint'), array('is_safe' => array('html'), 'needs_context' => true)),
+            'kint' => new TwigFunction('kint', array($this, 'twig_kint'), array('is_safe' => array('html'), 'needs_context' => true)),
         );
     }
 
