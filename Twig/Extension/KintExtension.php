@@ -10,18 +10,20 @@
  */
 
 namespace Cg\KintBundle\Twig\Extension;
-use Twig_Extension;
-use Twig_Function_Method;
-use Kint;
 
-class KintExtension extends Twig_Extension
+use Kint;
+use Twig\TwigFunction;
+use Twig\Extension\AbstractExtension;
+use Twig\Template;
+
+class KintExtension extends AbstractExtension
 {
     private $enabled;
     private $nesting_depth;
     private $string_length;
     private $kernel;
 
-    public function __construct($enabled,$nesting_depth,$string_length,$kernel)
+    public function __construct($enabled, $nesting_depth, $string_length, $kernel)
     {
         $this->enabled = $enabled;
         $this->nesting_depth = $nesting_depth;
@@ -37,13 +39,13 @@ class KintExtension extends Twig_Extension
     public function getFunctions()
     {
         return array(
-            'kint' => new Twig_Function_Method($this,'twig_kint', array('is_safe' => array('html'), 'needs_context' => true)),
+            'kint' => new TwigFunction('kint', array($this, 'twig_kint'), array('is_safe' => array('html'), 'needs_context' => true)),
         );
     }
 
     /**
      * Returns the name of the extension.
-    *
+     *
      * @return string The extension name
      */
     public function getName()
@@ -72,7 +74,7 @@ class KintExtension extends Twig_Extension
             //no extra parameters passed, so we dump the whole twig context
             $kint_variable = array();
             foreach ($context as $key => $value) {
-                if (!$value instanceof Twig_Template) {
+                if (!$value instanceof Template) {
                     $kint_variable[$key] = $value;
                 }
             }
@@ -80,7 +82,7 @@ class KintExtension extends Twig_Extension
             ob_start();
             Kint::dump($kint_variable);
             $output = ob_get_clean();
-            $output = str_replace ('$kint_variable','TWIG CONTEXT',$output);
+            $output = str_replace('$kint_variable', 'TWIG CONTEXT', $output);
 
         } else {
 
@@ -89,7 +91,7 @@ class KintExtension extends Twig_Extension
                 ob_start();
                 Kint::dump($kint_variable);
                 $result = ob_get_clean();
-                $output .= str_replace ('$kint_variable',$i,$result);
+                $output .= str_replace('$kint_variable', $i, $result);
             }
         }
 
